@@ -11,14 +11,7 @@
   
   "capacitor_version": "6",
   
-  "plugins": [
-    "@capacitor/camera",
-    "@capacitor/filesystem",
-    "@capacitor/preferences",
-    "@capacitor/app",
-    "@capacitor/splash-screen",
-    "@capacitor/status-bar"
-  ],
+  "capacitor_install_dependencies": false,
   
   "preferences": {
     "Orientation": "portrait",
