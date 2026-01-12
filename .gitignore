@@ -1,7 +1,37 @@
-.idea/
+# Dependencies
 node_modules/
-.vscode/
-*.map
-.DS_Store
-.sourcemaps
+
+# Build outputs
+android/
+ios/
 dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Capacitor
+.capacitor/
+
+# APK files (optional - uncomment if you want to track them)
+# *.apk
+# *.aab
+
+# Keystore files (NEVER commit these!)
+*.keystore
+*.jks

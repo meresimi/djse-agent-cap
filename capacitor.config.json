@@ -1,10 +1,32 @@
 {
-  "appId": "com.meresimi.djseagent",
-  "appName": "DJSE Agent",
-  "webDir": "dist",
+  "appId": "com.djseafood.mainagent",
+  "appName": "DJ-SE Main Agent",
+  "webDir": "www",
+  "version": "1.0.0",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#1a1a2e"
+  },
   "plugins": {
     "SplashScreen": {
-      "launchAutoHide": false
+      "launchShowDuration": 2000,
+      "backgroundColor": "#1a1a2e",
+      "showSpinner": false,
+      "androidSpinnerStyle": "small",
+      "spinnerColor": "#4ecdc4"
+    },
+    "StatusBar": {
+      "style": "dark",
+      "backgroundColor": "#1a1a2e"
+    },
+    "Camera": {
+      "saveToGallery": true,
+      "allowEditing": false,
+      "quality": 90
     }
   }
 }

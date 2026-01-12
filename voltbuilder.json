@@ -1,15 +1,34 @@
 {
-  "id": "com.meresimi.djseagent",
-  "displayName": "DJSE Agent",
-  "author": "meresimi",
-  "email": "simionabobai@gmail.com",
+  "framework": "capacitor",
+  "app_id": "com.djseafood.mainagent",
+  "app_name": "DJ-SE Main Agent",
   "version": "1.0.0",
-  "platform": "android",
-  "build": {
-    "keystore": "release"
-  },
+  "description": "Field-agent tool for DJ Seafood Enterprise operations",
+  "author": "MereSimi Studios",
+  "email": "simionaboba@gmail.com",
+  
+  "platforms": ["android"],
+  
+  "capacitor_version": "6",
+  
+  "plugins": [
+    "@capacitor/camera",
+    "@capacitor/filesystem",
+    "@capacitor/preferences",
+    "@capacitor/app",
+    "@capacitor/splash-screen",
+    "@capacitor/status-bar"
+  ],
+  
   "preferences": {
-    "android-minSdkVersion": "22",
-    "android-targetSdkVersion": "33"
+    "Orientation": "portrait",
+    "AndroidInsecureFileModeEnabled": "true"
+  },
+  
+  "build_android": {
+    "keystore": "",
+    "keystore_alias": "",
+    "keystore_pw": "",
+    "keystore_alias_pw": ""
   }
 }

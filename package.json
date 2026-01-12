@@ -1,27 +1,24 @@
 {
-  "name": "capacitor-app",
+  "name": "djse-main-agent-capacitor",
   "version": "1.0.0",
-  "description": "An Amazing Capacitor App",
-  "type": "module",
-  "keywords": [
-    "capacitor",
-    "mobile"
-  ],
+  "description": "DJ-SE Main Agent App - Capacitor Version for VoltBuilder",
+  "main": "index.js",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "echo 'Ready for VoltBuilder'"
   },
+  "author": "MereSimi Studios",
+  "license": "MIT",
   "dependencies": {
-    "@capacitor/android": "^8.0.0",
-    "@capacitor/camera": "latest",
-    "@capacitor/core": "latest",
-    "@capacitor/splash-screen": "latest"
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/camera": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "@capacitor/preferences": "^6.0.0",
+    "@capacitor/splash-screen": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "latest",
-    "vite": "^5.4.2"
-  },
-  "author": "",
-  "license": "ISC"
+    "@capacitor/cli": "^6.0.0"
+  }
 }

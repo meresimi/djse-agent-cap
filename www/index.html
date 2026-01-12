@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
+  <title>DJ-SE Main Agent</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Prevent caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+</head>
+
+<body>
+
+  <header>
+    <img src="icon.png" alt="logo" id="homeLogo" class="logo">
+    <h1>DJ-SE Main Agent</h1>
+    <button id="menuBtn" class="hamburger">☰</button>
+  </header>
+
+  <!-- Overlay that closes menu when clicking outside -->
+  <div id="menuOverlay" class="hidden"></div>
+
+  <nav id="menu" class="hidden">
+    <ul>
+      <li data-section="dashboard">🏠 Dashboard</li>
+      <li data-section="cash">💰 Cash</li>
+      <li data-section="purchases">🧾 Purchases</li>
+      <li data-section="newpurchase">➕ New Purchase</li>
+      <li data-section="advances">👨🏾‍🌾 Farmer Advances</li>
+      <li data-section="stock/stock_home">📦 Stock at Hand</li>
+      <li data-section="shipments">🚢 Shipments</li>
+      <li data-section="reports">📊 Reports</li>
+      <li data-section="settings">⚙️ Settings</li>
+    </ul>
+  </nav>
+
+  <main id="content"><h2>Loading...</h2></main>
+
+  <!-- Capacitor will inject capacitor.js automatically -->
+  <script src="utils.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
