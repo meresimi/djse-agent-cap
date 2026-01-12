@@ -1,0 +1,15 @@
+{
+  "id": "com.meresimi.djseagent",
+  "displayName": "DJSE Agent",
+  "author": "meresimi",
+  "email": "simionabobai@gmail.com",
+  "version": "1.0.0",
+  "platform": "android",
+  "build": {
+    "keystore": "release"
+  },
+  "preferences": {
+    "android-minSdkVersion": "22",
+    "android-targetSdkVersion": "33"
+  }
+}
