@@ -1,0 +1,10 @@
+{
+  "appId": "com.meresimi.djseagent",
+  "appName": "DJSE Agent",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

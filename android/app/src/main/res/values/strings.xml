@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DJSE Agent</string>
+    <string name="title_activity_main">DJSE Agent</string>
+    <string name="package_name">com.meresimi.djseagent</string>
+    <string name="custom_url_scheme">com.meresimi.djseagent</string>
+</resources>
