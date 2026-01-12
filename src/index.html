@@ -1,32 +1,51 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Awesome Capacitor App</title>
-    <meta
-      name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
+  <title>DJ-SE Main Agent</title>
+  <link rel="stylesheet" href="styles.css">
 
-    <script
-      type="module"
-      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
-    ></script>
+  <!-- Prevent caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+</head>
 
-    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <meta name="theme-color" content="#31d53d" />
-  </head>
-  <body>
-    <capacitor-welcome></capacitor-welcome>
+<body>
 
-    <script src="./js/capacitor-welcome.js" type="module"></script>
-  </body>
+  <header>
+    <img src="icon.png" alt="logo" id="homeLogo" class="logo">
+    <h1>DJ-SE Main Agent</h1>
+    <button id="menuBtn" class="hamburger">☰</button>
+  </header>
+
+  <!-- Overlay that closes menu when clicking outside -->
+  <div id="menuOverlay" class="hidden"></div>
+
+  <nav id="menu" class="hidden">
+    <ul>
+      <li data-section="dashboard">🏠 Dashboard</li>
+      <li data-section="cash">💰 Cash</li>
+      <li data-section="purchases">🧾 Purchases</li>
+      <li data-section="newpurchase">➕ New Purchase</li>
+      <li data-section="advances">👨🏾‍🌾 Farmer Advances</li>
+      <li data-section="stock/stock_home">📦 Stock at Hand</li>
+      <li data-section="shipments">🚢 Shipments</li>
+      <li data-section="reports">📊 Reports</li>
+      <li data-section="settings">⚙️ Settings</li>
+    </ul>
+  </nav>
+
+  <main id="content"><h2>Loading...</h2></main>
+
+  <!-- Capacitor will inject capacitor.js automatically -->
+  <script src="utils.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+
+</body>
 </html>

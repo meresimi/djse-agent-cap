@@ -1,0 +1,498 @@
+/* ========== GENERAL APP STYLING ========== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f9f8;
+}
+
+/* ---------- HEADER (Top Bar) ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #007c65;
+  color: white;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* Large faded logo watermark inside header */
+header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-image: url('topbar_bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.25;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep header content above watermark */
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  flex: 1;
+}
+
+/* ---------- Top Bar Logo ---------- */
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  object-fit: contain;
+  margin-right: 6px;
+  transform: scale(1.2);
+  transform-origin: left center;
+}
+
+.hamburger {
+  background: none;
+  color: white;
+  font-size: 1.4rem;
+  border: none;
+}
+
+/* ----- MENU (Dropdown) ----- */
+nav {
+  background: white;
+  position: fixed;
+  right: 10px;
+  top: 60px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+nav ul { list-style: none; margin: 0; padding: 0; }
+nav li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+nav li:last-child { border-bottom: none; }
+nav li:hover { background: #f0f0f0; cursor: pointer; }
+
+.hidden { display: none; }
+
+/* ----- MAIN CONTENT ----- */
+main { padding: 15px; }
+
+/* ----- CARD DESIGN ----- */
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px rgba(0,0,0.1,0.1);
+}
+
+/* ----- BUTTONS ----- */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn.primary { background: #007c65; color: white; }
+.btn.danger  { background: #d33;    color: white; }
+.btn.small   {
+  background: #eee;
+  color: #000;
+  margin: 4px 4px 0 0;
+  padding: 6px 10px;
+  font-size: .9rem;
+}
+
+/* ========== MINI OVERLAY FORMS ========== */
+.overlayForm {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 50;
+}
+.overlayForm.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.miniForm {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  width: 80%;
+  max-width: 320px;
+}
+.miniForm label { display: block; margin-top: 8px; }
+.miniForm input { width: 100%; padding: 6px; margin-top: 4px; }
+.miniForm button { margin-top: 10px; width: 100%; }
+
+/* ========== DATA TABLES ========== */
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+
+.data-table th,
+.data-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.data-table th {
+  background: #007c65;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.data-table tr:nth-child(even) { background: #f9f9f9; }
+.data-table tr:hover          { background: #eef8f6; }
+
+/* ========== FIX — MAKE CHECKBOXES CLICKABLE IN SCROLL TABLE ========== */
+.scrollTable {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 65vh;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  z-index: 1; /* ensures table is on top of layout */
+}
+
+.scrollTable table {
+  position: relative;
+  z-index: 2;
+}
+
+.scrollTable input[type="checkbox"] {
+  pointer-events: auto !important;
+  z-index: 5;
+}
+
+/* Left-align headers and cells */
+.data-table th { text-align: left !important; padding-left: 8px; }
+.data-table td { text-align: left !important; padding-left: 8px; }
+
+/* ========== MODAL WINDOW ========== */
+.modalCard {
+  background: #fff;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 800px;
+  max-height: 85vh;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modalOverlay.hidden { display: none; }
+
+.modalCard.small {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ========== MISC ========== */
+h2 { margin-top: 0; color: #007c65; }
+label { font-size: 0.9rem; color: #333; }
+
+input, select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+p { margin: 6px 0; }
+table { width: 100%; }
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1rem; }
+  .card   { padding: 10px; }
+  .btn    { font-size: 0.85rem; }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.dash-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.dash-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.1em;
+}
+.icon { font-size: 1.3em; }
+
+.dash-stats {
+  font-size: 0.9em;
+  color: #333;
+  margin-top: 4px;
+}
+
+/* ===== SETTINGS PAGE ===== */
+#settings select, #settings button {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.btn.wide { display: block; width: 100%; text-align: left; }
+
+.dark-mode {
+  background-color: #111;
+  color: #f5f5f5;
+}
+.dark-mode .card { background-color: #222; color: #f5f5f5; }
+.dark-mode .btn.primary { background-color: #009d80; }
+.dark-mode .btn { background-color: #333; color: #f5f5f5; border: 1px solid #444; }
+
+:root { --app-font-size: 16px; }
+body { font-size: var(--app-font-size); transition: background 0.3s, color 0.3s; }
+.card { transition: background 0.3s, color 0.3s; }
+
+#menuOverlay {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0);
+  z-index: 15;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.stock-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+.stock-btn-container .btn {
+  width: 200px;
+  align-self: center;
+}
+
+.stock-item p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.table-scroll { overflow-x: auto; overflow-y: hidden; width: 100%; }
+.table-scroll table { min-width: 600px; }
+
+.farmer-search, .vessel-search {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+  margin-top: 14.5px;
+}
+
+.farmer-search:focus, .vessel-search:focus {
+  outline: none;
+  border-color: #007c65;
+  box-shadow: 0 0 4px rgba(0,124,101,0.35);
+}
+
+/* === FIX for unclickable checkboxes inside scrollTable & data-table === */
+
+#pendingGoodsContainer table.data-table tbody tr {
+  pointer-events: none !important;
+}
+
+#pendingGoodsContainer table.data-table input[type="checkbox"] {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 10;
+}
+
+/* ================================
+   PURCHASES TABLE — ALIGNMENT FIX
+   ================================ */
+
+/* Center the numeric columns */
+#purchasesTable th:nth-child(3),
+#purchasesTable th:nth-child(4),
+#purchasesTable th:nth-child(5),
+#purchasesTable td:nth-child(3),
+#purchasesTable td:nth-child(4),
+#purchasesTable td:nth-child(5) {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* Center the PIC column */
+#purchasesTable th:nth-child(6),
+#purchasesTable td:nth-child(6) {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* Thumbnail image */
+.purchase-thumb {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.collapsible {
+  background: #007c65;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.collapseContent {
+  display: none;
+  padding: 6px 0;
+}
+
+/* ============================
+   BOTTOM SHEET MODAL FIX
+   Keeps inputs visible when keyboard opens
+   ============================ */
+
+.bottomSheet {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 18px;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  animation: slideUp 0.25s ease-out;
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.25);
+  z-index: 99999;
+}
+
+/* Slide animation */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Drag handle */
+.bottomSheet .dragHandle {
+  width: 45px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 4px;
+  margin: 0 auto 12px auto;
+}
+
+/* ============================================
+   NEW PURCHASE — INLINE LABEL + VALUE ROWS
+   ============================================ */
+
+.npRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+}
+
+.npRow label {
+  font-weight: normal !important;
+  color: #333;
+  margin-right: 10px;
+}
+
+.npValue {
+  font-weight: bold !important;
+  color: #006b4a; /* Dark green */
+}
