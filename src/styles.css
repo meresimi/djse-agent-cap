@@ -279,15 +279,25 @@ table { width: 100%; }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 10px;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .dash-card {
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  padding: 12px;
+  min-width: 0;
+}
 }
 .dash-card:hover {
   transform: translateY(-2px);
