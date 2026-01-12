@@ -1,7 +1,7 @@
 {
   "appId": "com.djseafood.mainagent",
   "appName": "DJ-SE Main Agent",
-  "webDir": "www",
+  "webDir": "src",
   "bundledWebRuntime": false,
   "server": {
     "androidScheme": "https"
