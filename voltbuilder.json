@@ -2,5 +2,10 @@
   "app_id": "com.djseafood.mainagent",
   "app_name": "DJ-SE Main Agent",
   "version": "1.0.0",
-  "platforms": ["android"]
+  
+  "platforms": ["android"],
+  
+  "capacitor": {
+    "version": "6"
+  }
 }
