@@ -28,16 +28,19 @@ jobs:
         java-version: '17'
     
     - name: Install dependencies
+      run: npm install
+    
+    - name: Clean Android platform
       run: |
-        npm install
+        if [ -d "android" ]; then
+          rm -rf android
+        fi
     
     - name: Add Android platform
-      run: |
-        npx cap add android
+      run: npx cap add android
     
     - name: Sync Capacitor
-      run: |
-        npx cap sync android
+      run: npx cap sync android
     
     - name: Build Android Debug APK
       run: |
